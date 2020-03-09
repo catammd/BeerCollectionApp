@@ -1,0 +1,11 @@
+// GlideJS
+@import '../../../fractal/node_modules/@glidejs/glide/src/assets/sass/glide.core';
+@import '../../../fractal/node_modules/@glidejs/glide/src/assets/sass/glide.theme';
+
+.c-slider {
+    max-width: 1000px; // TODO: Change to something better, and maybe provide different available sizes
+}
+
+.glide__slides {
+    margin: 0;
+}

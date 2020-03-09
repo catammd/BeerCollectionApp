@@ -1,0 +1,67 @@
+
+.mobile-nav-toggle-button {
+    display: inline-block;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-border-radius:0;
+    text-decoration: none;
+    transform-origin: 0 0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    cursor: pointer;
+
+    position: relative;
+    margin-left: auto;
+
+    display: block;
+    width: $mobile-nav-toggle-button-width;
+    height: $mobile-nav-toggle-button-width;
+    cursor: pointer;
+    outline: none;
+
+    > span, &::before, &::after {
+        content: '';
+
+        position: absolute;
+        right: 0;
+        height: $mobile-nav-toggle-button-border-height;
+        width: $mobile-nav-toggle-button-width;
+        background-color: $color_brand1;
+        margin-top: $spacing-xs;
+        transition: background-color $base-transition-duration ease-in-out, transform $base-transition-duration ease-in-out;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    > span {
+        top: 0.5rem;
+    }
+
+    &::after {
+        top: 1rem;
+    }
+
+    // When menu is open change burger menu icon to a close x
+    .menu-is-open & {
+        > span {
+            background-color: transparent;
+        }
+
+        &::before {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        &::after {
+           transform: rotate(-45deg) translate(5px, -6px);
+        }
+    }
+
+    @media #{$medium-up} {
+        display: none;
+    }
+}

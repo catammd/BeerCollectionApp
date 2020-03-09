@@ -1,0 +1,26 @@
+{
+  "name": "beer-collection-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install-all-packages": "npm install && cd ./fractal && npm install && cd ../assets/webcomponents && npm install",
+    "start": "concurrently \"npm run fractal\" \"cd assets/webcomponents && npm start --es5\"",
+    "fractal": "cd fractal && npm start",
+    "build": "npm run install-all-packages && npm run build:webcomponents && npm run build:fractal",
+    "build:webcomponents": "cd assets/webcomponents && npm run build",
+    "build:fractal": "cd fractal && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catammd/BeerCollectionApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@frctl/fractal": "^1.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "normalize.css": "^8.0.1"
+  }
+}

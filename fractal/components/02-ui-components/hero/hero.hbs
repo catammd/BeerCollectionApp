@@ -1,0 +1,33 @@
+<section class="c-hero {{#if bgvideo}}c-hero--video{{/if}}" style="{{#if bgimage}}background-image: url('{{bgimage}}');{{/if}}{{#if bgcolor}}background-color: {{bgcolor}};{{/if}}">
+    {{#if bgvideo}}
+        <video playsinline autoplay muted loop poster="{{placeholderImage}}" class="c-hero__video" data-object-fit="cover">
+            <source src="{{bgvideo}}" type="video/mp4">
+        </video>
+        {{#if bgvideoOverlay}}
+            <span class="c-hero__video-overlay" style="background-color: {{bgvideoOverlay}};opacity: {{bgvideoOverlayOpacity}};"></span>
+        {{/if}}
+    {{/if}}
+    {{#if srcYoutubeId}}
+        <div class="c-hero__video">
+            <div class="c-media-player" data-plyr-config='{ "autoplay": true, "muted": true, "hideControls": true, "loop": { "active": true } }'
+                 data-plyr-provider="{{provider}}" data-plyr-embed-id="{{srcYoutubeId}}">
+            </div>
+        </div>
+    {{/if}}
+
+    {{#if srcVimeoId}}
+        <div class="c-hero__video">
+            <div class="c-media-player" data-plyr-config='{ "autoplay": false, "muted": true, "hideControls": true, "loop": { "active": true } }'
+                 data-plyr-provider="{{provider}}"
+                 data-plyr-embed-id="{{srcVimeoId}}">
+            </div>
+        </div>
+    {{/if}}
+    <div class="c-hero__content"{{#if textcolor}} style="color: {{textcolor}}"{{/if}}>
+        <h1>{{message}}</h1>
+        <p>{{submessage}}</p>
+        {{#if link}}
+        <a class="c-btn c-btn--primary" href="{{link.url}}">{{link.text}}</a>
+        {{/if}}
+    </div>
+</section>

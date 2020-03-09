@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #BUTTON GROUPS
+   ========================================================================== */
+
+.c-btn-group {
+  display: flex;
+
+  /* Button */
+
+  .c-btn {
+
+    &:not(:last-child) {
+      margin-right: $base-spacing-unit-small;
+    }
+  }
+}
+
+@media #{$medium-up} {
+
+  .c-btn-group {
+
+    /* Button */
+
+    .c-btn {
+
+      &:not(:last-child) {
+        margin-right: $base-spacing-unit;
+      }
+
+      /**
+       * Small
+       */
+
+      &.c-btn--small {
+
+        &:not(:last-child) {
+          margin-right: $base-spacing-unit-small
+        }
+      }
+    }
+  }
+}

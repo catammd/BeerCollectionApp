@@ -1,0 +1,63 @@
+// PlyrJS
+@import '../../../fractal/node_modules/plyr/src/sass/plyr';
+
+
+.c-media {
+
+  /**
+  * Override plyr plugin styles.
+  **/
+  .plyr--video .plyr__controls {
+    visibility: hidden;
+  }
+
+  .plyr--playing .plyr__controls {
+    visibility: visible;
+  }
+
+  .plyr__control--overlaid {
+    background-color: rgba($color_brand1, 0.8);
+  }
+
+  .plyr--video .plyr__control:hover {
+    background-color: $color_brand1;
+  }
+}
+
+.c-media--picture {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  /* 16:9 Aspect Ratio */
+  padding-top: 56.25%;
+}
+
+.c-media__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+// Image overlay
+.c-media--overlay {
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba($color_shade1, 0.3);
+	}
+}
+
+// Caption
+.c-media__caption {
+	position: relative;
+	padding: $spacing-s $spacing-m;
+	background-color: $color_white;
+	font-style: italic;
+}

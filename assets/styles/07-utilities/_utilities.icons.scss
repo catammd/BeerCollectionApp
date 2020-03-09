@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #ICONS
+   ========================================================================== */
+
+.u-icon {
+    height: 100%;
+    width: 100%;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.u-icon--xs {
+    height: $size-xs;
+    width: $size-xs;
+}
+
+.u-icon--s {
+    height: $size-s;
+    width: $size-s;
+}
+
+.u-icon--m {
+    height: $size-m;
+    width: $size-m;
+}
+
+.u-icon--l {
+    height: $size-l;
+    width: $size-l;
+}
+
+.u-icon--xl {
+    height: $size-xl;
+    width: $size-xl;
+}
+
+.u-icon--xxl {
+    height: $size-xxl;
+    width: $size-xxl;
+}

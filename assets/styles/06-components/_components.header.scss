@@ -1,0 +1,92 @@
+.c-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $color_white;
+    padding: $spacing-inset-m;
+    z-index: $z-index__header;
+    
+    @media #{$medium-up} {
+        position: relative;
+    }
+
+    &__mobile {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @media #{$medium-up} {
+            display: none;
+        }
+    }
+    
+    &.menu-is-open {
+        background-color: $color_brand2;
+
+        @media #{$medium-up} {
+            background-color: transparent;
+        }
+    }
+}
+
+.c-header__inner {
+    position: fixed;
+    top: 62px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $color_brand2;
+    z-index: $z-index__lowest;
+
+    @media #{$small-only} {
+        flex-direction: column-reverse; //We probably want the search bar first
+        padding-top: $spacing-s;
+        padding: $spacing-inset-m;
+        display: none;
+
+        .c-logo {
+            display: none;
+        }
+
+        .c-header__nav{
+            flex-direction: column;
+
+            li {
+                display: block;
+                padding: $spacing-stack-s;
+            }   
+        }
+        .c-text-input {
+            input {
+                width: 100%;
+            }
+            margin: $spacing-stack-m;
+        }
+    }
+
+    @media #{$medium-up} {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        top:0;
+    }
+
+    .menu-is-open & {
+        display: flex;
+    }
+}
+
+.c-header__nav {
+    display: flex;
+    flex-grow: 1;
+
+    a {
+        text-decoration: none;
+        color: black;
+        margin-right: $spacing-m;
+    }
+}

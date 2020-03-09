@@ -1,0 +1,24 @@
+<div class="demo-wrapper">
+
+    <p>This page demonstrates how the most common HTML output from a RTE (Rich Text Editor) 📝 looks like.</p>
+
+    <hr>
+
+    {{render '@typography'}}
+    <div class="demo-wrapper__section">
+        <h6>Table</h6>
+        {{render '@table'}}
+    </div>
+    <div class="demo-wrapper__section">
+        <h6>Code</h6>
+        <code>
+            This is some code
+        </code>
+    </div>
+    <div class="demo-wrapper__section">
+        <h6>Horizontal ruler</h6>
+        <p>Text before the horizontal ruler</p>
+        <hr>
+        <p>Text after the horizontal ruler</p>
+    </div>
+</div>

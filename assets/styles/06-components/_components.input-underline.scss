@@ -1,0 +1,58 @@
+.c-text-input-underline{
+    position: relative;
+    margin: 1rem 0; //Need the spacing for animation
+    width: 100%;
+
+    input{
+        color: $color_black;
+        padding: 10px 10px 10px 8px; //TODO: Move to vars
+        display: block;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $color_black;
+        width:100%;
+
+        &:focus {
+            outline: none;
+        }
+        &:focus ~ label,
+        &:valid ~ label {
+            top: -14px;
+            font-size: 12px;
+            color: $color_shade3;
+        }
+        &:focus ~ .c-text-input-bar:before {
+            width: 100%;
+        }
+
+        &:focus:invalid {
+            border-color: $color_utility2; //red
+        }
+    }
+    
+    label {
+        color: $color_shade3;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 250ms ease all; //TODO: Move to transition vars
+    }   
+}
+
+.c-text-input-bar {
+    position: relative;
+    display: block;
+    width: 100%; 
+
+    &:before {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 0px;
+        position: absolute;
+        background-color: inherit;
+        transition: 250ms ease all; //TODO: Move to vars
+        left: 0%;
+    }
+}

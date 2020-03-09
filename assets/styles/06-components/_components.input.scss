@@ -1,0 +1,28 @@
+.c-text-input {
+    label{
+        font-size: 12px; //TODO: Move to vars
+        display: block;
+        margin-bottom: 10px; //TODO: Move to vars
+        color: $color_shade3;
+    }
+
+    input {
+        padding: 10px 10px 10px 8px; //TODO: Move to vars
+        border:0;
+        border: 1px solid $color_shade3;
+
+        &:focus {
+            outline:none;
+            border: 1px solid $color_black;
+        }
+
+        &::placeholder{
+            color: $color_shade3;
+        }
+
+        &:focus:invalid{
+           border-color: $color_utility2; //red
+        }
+    }
+
+}

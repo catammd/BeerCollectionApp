@@ -1,0 +1,25 @@
+@import "../../../../styles/01-settings/_settings";
+
+.c-filterable__list {
+    list-style: none;
+    margin: 0;
+}
+
+.c-filterable__tags {
+    margin-bottom: $spacing-l;
+}
+
+.c-filterable__btn {
+    margin-right: $spacing-l;
+}
+
+[data-toggle='on'] {
+    position: relative;
+    visibility: visible
+}
+
+[data-toggle='off'] {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+}

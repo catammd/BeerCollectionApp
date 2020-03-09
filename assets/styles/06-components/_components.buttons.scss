@@ -1,0 +1,116 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+.c-btn {
+    cursor: pointer;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: 1;
+    padding: 11px $spacing-m;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.25s, color 0.25s, transform 0.05s;
+    vertical-align: middle;
+    white-space: nowrap;
+    min-width: 120px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: $z-index__negative;
+        border: 1px solid $color_black;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: all 0.25s;
+    }
+
+    &:focus,
+    &:hover {
+       @include button-focus-state();
+    }
+
+    &:active {
+        transform: scale3d(0.9,0.9,1);
+    }
+
+    /* Icon */
+
+    .c-btn__icon {
+        display: inline-flex;
+        margin-right: $spacing-s;
+    }
+
+
+    /**
+     * Primary
+     */
+
+    &.c-btn--primary {
+        background-color: $color_black;
+        border: 1px solid $color_shade1;
+        color: $color_white;
+    }
+
+
+    /**
+     * Secondary
+     */
+
+    &.c-btn--secondary {
+        background-color: $color_white;
+        border-color: $color_black;
+        color: $color_black;
+
+        &:focus,
+        &:hover {
+            background-color: $color_black;
+            color: $color_white;
+        }
+    }
+
+
+    /**
+     * Ghost
+     */
+
+    &.c-btn--ghost {
+        background-color: transparent;
+        border-color: transparent;
+        color: $color_black;
+
+        &:active,
+        &:hover {
+            background-color: $color_shade3;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+
+    /**
+     * Disabled
+     */
+
+    &[disabled] {
+        background-color: $color_shade3;
+        border-color: $color_shade3;
+        color: $color_white;
+        cursor: not-allowed;
+
+        &:after {
+            content: none;
+        }
+    }
+}

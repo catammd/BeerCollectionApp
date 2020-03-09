@@ -1,0 +1,22 @@
+<div class="demo-wrapper">
+  <nds-filterable-list>
+    <div slot="filter-tags" class="c-filterable__tags">
+      {{#each tags}}
+      <button class="c-btn c-btn--primary c-filterable__btn" {{#if dataFilterTag}}data-filter-tag="{{ dataFilterTag }}"
+        {{/if}} {{#if reset}}data-reset="true" {{/if}}>
+        {{ tagName }}
+      </button>
+      {{/each}}
+    </div>
+
+    <ul slot="filter-items" class="c-filterable__list">
+      {{#each tags}}
+      {{#each tagValue}}
+      <li class="c-filterable-items" data-tag="{{ ../dataFilterTag }}">
+        {{this}}
+      </li>
+      {{/each}}
+      {{/each}}
+    </ul>
+  </nds-filterable-list>
+</div>

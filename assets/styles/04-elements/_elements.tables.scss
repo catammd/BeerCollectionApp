@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
+table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+
+  caption {
+    caption-side: bottom;
+    color: $color-shade3;
+    font-size: 0.875rem;
+    margin-top: $base-spacing-unit-small;
+  }
+
+  thead {
+    border-bottom: 2px solid $color-brand2;
+  }
+
+  td {
+    border-bottom: $base-border-width-small solid $color-shade4;
+  }
+}

@@ -1,0 +1,42 @@
+.c-quote {
+    padding: $spacing-inset-m;
+    width: 100%;
+}
+
+.c-quote__body {
+    z-index: $z-index__lowest;
+    position: relative;
+    margin: 0;
+    padding: $spacing-inset-xl;
+    font-size: $size-l;
+
+    &::before,
+    &::after {
+        z-index: $z-index__negative;
+        position: absolute;
+        color: $color_shade4;
+        font-size: $size-xxl;
+        font-weight: $weight-bold;
+    }
+    &::before {
+        content: "“";
+        font-family: $font-secondary;
+        top: 0;
+        left: 0;
+        line-height: 1;
+    }
+    &::after {
+        content: "”";
+        font-family: $font-secondary;
+        bottom: 0;
+        right: 0;
+        line-height: 0;
+    }
+}
+
+.c-quote__credits {
+    text-align: right;
+    padding: $spacing-inline-xl;
+    color: $color_shade3;
+    font-size: $font-size-caption;
+}

@@ -1,0 +1,35 @@
+.c-loading {
+    circle {
+        stroke-width: 8;
+        stroke-linecap: butt;
+        stroke-dasharray: 240;
+    }
+
+    svg {
+        fill: transparent;
+
+        circle {
+            animation-name: rotate;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.5,.25,.5,.75);
+        }
+    }
+
+}
+
+.c-loading__stroke {
+    stroke: $color_brand1;
+    stroke-dashoffset: 40;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

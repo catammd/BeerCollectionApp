@@ -1,0 +1,26 @@
+
+<div class="demo-wrapper">
+
+{{#if linkButton}}
+<a href="{{href}}"
+{{else}}
+<button
+{{/if}}
+    class="c-btn {{#if modifier}} c-btn--{{modifier}}{{/if}}"
+    {{#if disabled}} disabled{{/if}}>
+
+    {{#if icon}}
+    <span class="c-btn__icon">
+        {{> @icon id=icon size=iconSize }}
+    </span>
+    {{/if}}
+
+    {{text}}
+
+{{#if linkButton}}
+</a>
+{{else}}
+</button>
+{{/if}}
+
+</div>

@@ -1,0 +1,18 @@
+<div class="c-card-container">
+    <ul>
+        {{#each cards}}
+        <li class="c-card">
+            <div class="c-card__img">
+                <img src="{{image}}"  data-object-fit="cover" alt="">
+            </div>
+            <div class="c-card__text">
+                <h2>
+                    <a href="#card-link" aria-describedby="desc-a-card">{{linkText}}</a>
+                </h2>
+                <p>{{description}}</p>
+                <span class="c-btn c-btn--primary" aria-hidden="true" id="desc-a-card">Read more →</span>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

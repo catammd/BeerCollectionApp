@@ -1,0 +1,49 @@
+
+.c-text-media-block__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$large-up} {
+        flex-wrap: nowrap;
+    }
+
+    // When image is placed to the right - reverse image and content
+    .c-text-media-block--media-right & {
+        flex-direction: row-reverse;
+
+        @media #{$medium-only} {
+            flex-direction: row;
+        }
+    }
+}
+
+.c-text-media-block__image {
+    width: 100%;
+
+    @media #{$medium-up} {
+        width: 50%;
+    }
+    //Image should be responsive?
+    > img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.c-text-media-block__content {
+    width: 100%;
+
+    // When the block has an image - the width should be 50%
+    .c-text-media-block--with-media & {
+        @media #{$large-up} {
+            width: 50%;
+        }
+        @media #{$small-up} {
+            padding: $spacing-m;
+        }
+        @media #{$large-up} {
+            padding-left: $spacing-xl;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+/* ==========================================================================
+   #MIXINS
+   ========================================================================== */
+
+/**
+ * Clearfix: contain floats.
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' '; /* 1 */
+    display: table; /* 2 */
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/**
+ * Set font size with a relative line height.
+ *
+ * The `$font-size` argument should be specified in `rem` units.
+ * The `$line-height` argument, if specified, should be unitless.
+ */
+
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+  font-size: $font-size;
+
+  @if ($important == true) {
+    $important: !important;
+  } @else {
+    $important: null;
+  }
+
+  @if ($line-height == 'auto') {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size) $important;
+  } @else {
+    line-height: $line-height $important;
+  }
+}
+
+/**
+ * Remove the default styles from lists.
+ */
+
+@mixin list-reset() {
+  list-style: none;
+  margin: 0;
+}
+
+@mixin hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  visibility: visible;
+  white-space: nowrap;
+}
+
+@mixin svg-arrow ($color, $position: up) {
+
+  $degrees: 0;
+  $height:  6px;
+  $width:   18px;
+
+  @if ($position == down) {
+    $degrees: 180 18 6;
+  } @else if ($position == left) {
+    $degrees: -90 18 18;
+    $width: 6px;
+    $height: 18px;
+    } @else if ($position == right) {
+      $degrees: 90 6 6;
+      $width: 6px;
+      $height: 18px;
+    }
+
+  background: no-repeat url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%22#{$width * 2}%22%20height%3D%22#{$height * 2}%22%3E%3Cpath%20fill%3D%22#{$color}%22%20transform%3D%22rotate(#{$degrees})%22%20d%3D%22M2.658,0.000%20C-13.615,0.000%2050.938,0.000%2034.662,0.000%20C28.662,0.000%2023.035,12.002%2018.660,12.002%20C14.285,12.002%208.594,0.000%202.658,0.000%20Z%22/%3E%3C/svg%3E');
+  background-size: 100% auto;
+  width: $width;
+  height: $height;
+}
+
+@mixin base-effects () {
+  opacity: 0;
+  pointer-events: none;
+  transition: all $base-transition-duration ease-out $base-transition-duration;
+}
+
+@mixin normalized-text() {
+  font-family: sans-serif !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-shadow: none !important;
+}
+
+@mixin button-focus-state(){
+  outline: 0;
+
+  &::after {
+      height: calc(100% + 10px);
+      width: calc(100% + 10px);
+      left: -5px;
+      top: -5px;
+      opacity: 1;
+  }
+}

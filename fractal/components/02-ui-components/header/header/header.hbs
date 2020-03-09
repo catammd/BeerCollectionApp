@@ -1,0 +1,13 @@
+<header class="c-header">
+    <div class="c-header__mobile">
+        {{> @logo }}
+        <button type="button" class="mobile-nav-toggle-button" onclick="document.getElementsByTagName('header')[0].classList.toggle('menu-is-open');">
+            <span></span>
+        </button>
+    </div>
+    <div class="c-header__inner">
+        {{> @logo }}
+        {{render '@navigation'}}
+        {{render '@input--no-label'}}
+    </div>
+</header>

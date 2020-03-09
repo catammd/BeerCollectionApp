@@ -1,0 +1,36 @@
+<div class="demo-wrapper">
+  <nds-tab-interface>
+    <!--
+              This slot contain the list of tabs
+          -->
+    <ul slot="tabs-list" class="c-tab-interface__tabs">
+      {{#each tabs}}
+      <li class="c-tab-interface__link">
+        <a class="c-btn  c-btn--primary" href="#section1">{{ tabName }}</a>
+      </li>
+      {{/each}}
+    </ul>
+
+    <!--
+              This slot contain the content for each tab
+          -->
+    <div slot="tabs-content">
+      {{#each tabs}}
+      <section id="{{ tabId }}" class="c-tab-interface__content">
+        {{#if isCard}}
+        <h2>{{ tabContentHeading }}</h2>
+        {{ render '@card' }}
+        {{/if}}
+
+        {{#if isText}}
+        <h2>{{ tabContentHeading }}</h2>
+        <p>
+          <p>{{ tabContent }}</p>
+        </p>
+        {{/if}}
+      </section>
+      {{/each}}
+    </div>
+
+  </nds-tab-interface>
+</div>

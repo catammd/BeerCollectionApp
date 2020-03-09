@@ -1,0 +1,102 @@
+.c-radio-button {
+    display: block;
+    margin-bottom: $spacing-s;
+}
+
+.c-radio-button__input {
+    // Hide the native radiobutton, but don't remove it form the DOM to make sure tabbing works, styling goes on the label
+    opacity: 0;
+    position: absolute;
+    left: 0;
+
+    // Create the radiobutton
+    + .c-radio-button__label {
+        font-size: $base-font-size;
+
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        position: relative;
+        user-select: none;
+
+        // Fake radiobutton
+        &::before {
+            content: '';
+
+            flex-shrink: 0;
+            display: block;
+            width: $fake-radio-button-size;
+            height: $fake-radio-button-size;
+            margin-right: $spacing-s;
+
+            border: 1px solid $form-element-border-color;
+            border-radius: 50%;
+            transition: border $base-transition-duration linear;
+        }
+
+        // dot
+        &::after {
+            content: '';
+
+            opacity: 0;
+            flex-shrink: 0;
+            display: block;
+            width: 8px;
+            height: 8px;
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-left: 5px;
+            margin-top: - 4px;
+            border-radius: 50%;
+            transition: opacity $base-transition-duration $base-transition-easing, transform $base-transition-duration $base-transition-easing;
+            background-color: $color_brand1;
+            transform: scale(0.8);
+        }
+
+        &:hover, &:focus {
+            &::before {
+                border-color: $color_brand1;
+            }
+        }
+    }
+
+    // Checked state
+    &:checked {
+        + .c-radio-button__label {
+            &::before {
+                border-color: $color_brand1;
+            }
+
+            &::after {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+
+    // Disabled state
+    &:disabled {
+        opacity: 0;
+
+        + .c-radio-button__label {
+            color: $color_shade3;
+            cursor: not-allowed;
+
+            &::before {
+                border-color: $color_shade3;
+                background-color: $color_shade4;
+            }
+            &::after  {
+                background-color: $color_shade3;
+            }
+        }
+    }
+}
+
+// Focus
+.c-radio-button__input:focus + .c-radio-button__label::before {
+    box-shadow: 0 0 0 2px $color_brand2;
+    outline: 1px solid transparent;
+}

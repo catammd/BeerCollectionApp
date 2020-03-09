@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #TYPE
+   ========================================================================== */
+
+/* Horizontal Rule */
+
+hr {
+  border: 0;
+  border-top: 2px solid $color-brand2;
+  display: block;
+}
+
+/* Mark */
+
+mark {
+  background-color: $color-utility3;
+}
+
+/* Paragraph */
+
+p {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
