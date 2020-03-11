@@ -2,10 +2,8 @@
 title: Welcome
 ---
 
-![North Design System](/assets/images/north_promotion.jpg)
 
-
-Welcome to North Design System.
+Welcome to Fractal Design System.
 
 👈 Use the navigation to the left to browse components.
 

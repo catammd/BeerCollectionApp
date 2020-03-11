@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@frctl/fractal": "^1.2.1"
+    "@frctl/fractal": "^1.2.0"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0",
+    "concurrently": "^4.1.0",
     "normalize.css": "^8.0.1"
   }
 }

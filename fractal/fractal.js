@@ -11,7 +11,7 @@ const pkg = require(path.join(__dirname, 'package.json'));
 /**
  * Metadata
  */
-fractal.set('project.title', 'North Design System');
+fractal.set('project.title', 'Fractal Design System');
 // Provide the package.json "version" to the templates
 fractal.set('project.version', pkg.version);
 
